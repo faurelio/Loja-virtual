@@ -13,14 +13,14 @@ namespace lojavirtual_aurelio.Controllers
     {
      public ActionResult Lista()
         {
-            var lista = new List<ProdutoVienModel>
+            var lista = new List<ProdutoViewModel>
             {
-                new ProdutoVienModel
+                new ProdutoViewModel
                 {
                     Nome = "Chuteira Nike",
                     Categoria = "Calcados"
                     },
-                    new ProdutoVienModel
+                    new ProdutoViewModel
                     {
                         Nome = "Camisa Adidas",
                         Categoria = "Roupas"                             

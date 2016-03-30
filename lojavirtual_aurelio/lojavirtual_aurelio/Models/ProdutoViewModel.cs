@@ -5,7 +5,7 @@ using System.Web;
 
 namespace lojavirtual_aurelio.Models
 {
-    public class ProdutoVienModel
+    public class ProdutoViewModel
     {
         public string Nome { get; set; }
 
