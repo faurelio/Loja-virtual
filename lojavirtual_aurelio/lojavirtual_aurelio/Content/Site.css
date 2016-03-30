@@ -24,5 +24,11 @@ textarea {
 }
 
 table ,tr ,td {
-    border: 1px dashed #000000;
+    border: 2px dashed #000000;
+    padding: 8px;
+    color: black;
+    box-shadow: 6px 6px 6px;
+    font-family:Algerian;
+    font-size: 15px;
+
 }

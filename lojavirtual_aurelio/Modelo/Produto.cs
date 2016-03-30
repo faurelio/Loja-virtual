@@ -10,6 +10,6 @@ namespace Modelo
     {
         public string Nome { get; set; }
 
-        public string  Categoria { get; set; }
+        public Categoria  Categoria { get; set; }
     }
 }

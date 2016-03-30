@@ -1,4 +1,6 @@
-﻿using lojavirtual_aurelio.Models;
+﻿using AutoMapper;
+using lojavirtual_aurelio.Models;
+using Modelo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,21 +13,15 @@ namespace lojavirtual_aurelio.Controllers
 {
     public class ProdutoController : Controller
     {
-     public ActionResult Lista()
+
+        public ActionResult Lista()
         {
-            var lista = new List<ProdutoViewModel>
-            {
-                new ProdutoViewModel
-                {
-                    Nome = "Chuteira Nike",
-                    Categoria = "Calcados"
-                    },
-                    new ProdutoViewModel
-                    {
-                        Nome = "Camisa Adidas",
-                        Categoria = "Roupas"                             
-                    }
-            };
+            var produtos = new Produtos();
+
+            var listaProdutos = produtos.Lista();
+
+            var lista = Mapper.Map<IList<ProdutoViewModel>>(listaProdutos);
+                       
             return View(lista);
         }   
 
