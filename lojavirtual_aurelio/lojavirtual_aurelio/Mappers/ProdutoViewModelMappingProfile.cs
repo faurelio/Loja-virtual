@@ -14,6 +14,10 @@ namespace lojavirtual_aurelio.Mappers
         {
             Mapper.CreateMap<Produto, ProdutoViewModel>()
             .ForMember(Dest => Dest.Categoria, opt => opt.MapFrom(src => src.Categoria.Nome));
+
+            Mapper.CreateMap<ProdutoViewModel, Produto > ()
+             .ForMember(Dest => Dest.Categoria, opt => opt.Ignore());
         }
+
     }
 }
