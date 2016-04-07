@@ -1,9 +1,9 @@
 ﻿@model lojavirtual_aurelio.Models.ProdutoViewModel
 @{
-    ViewBag.Title = "Novo Produto";
+    ViewBag.Title = Model == null || Model.Id == null ? "Novo Produto" : "Editando Produto";
 }
 
-<h2>Novo Produto</h2>
+<h2>@(Model == null || Model.Id == null ? "Novo" :"Editando") Produto</h2>
 
 
 @using (Html.BeginForm("Editar", "Produto", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -11,6 +11,9 @@
     @Html.AntiForgeryToken()
     <h4>Create a new account.</h4>
     <hr />
+
+    @Html.HiddenFor(model => model.Id)
+
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
         @Html.LabelFor(m => m.Nome, new { @class = "col-md-2 control-label" })
